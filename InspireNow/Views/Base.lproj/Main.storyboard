@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <accessibilityOverrides isEnabled="YES"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -22,14 +23,14 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A's quote" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6H-ps-wvW">
                                         <rect key="frame" x="0.0" y="0.0" width="344" height="24"/>
-                                        <accessibility key="accessibilityConfiguration" label="Quote owner"/>
+                                        <accessibility key="accessibilityConfiguration" hint="Quote owner's name" label="Owner text"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" editable="NO" textAlignment="center" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N3Y-PD-yTl">
                                         <rect key="frame" x="0.0" y="54" width="344" height="692"/>
-                                        <accessibility key="accessibilityConfiguration" label="Actual quote by the owner">
+                                        <accessibility key="accessibilityConfiguration" hint="Actual quote by the owner" label="Quote text">
                                             <accessibilityTraits key="traits" staticText="YES"/>
                                         </accessibility>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \n Hello</string>
@@ -40,7 +41,7 @@
                                     <button toolTip="Show more quotes" opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXJ-ow-zvC">
                                         <rect key="frame" x="0.0" y="776" width="344" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <accessibility key="accessibilityConfiguration" label="A button for showing more quote owner's name"/>
+                                        <accessibility key="accessibilityConfiguration" hint="A button for showing more quote owner's name" label="Show more button"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="5Zg-DZ-EuE"/>
                                         </constraints>
@@ -98,7 +99,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6H7-bf-fKU" userLabel="A's Quote">
                                         <rect key="frame" x="0.0" y="0.0" width="344" height="38"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <accessibility key="accessibilityConfiguration" label="A button showing a quote owner, tapping will show the quote associate with the owner"/>
+                                        <accessibility key="accessibilityConfiguration" hint="A button showing a quote owner, tapping will show the quote associate with the owner" label="Display quote button"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="pzs-Tf-tCS"/>
                                         </constraints>
@@ -119,7 +120,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MsI-XR-lTC" userLabel="B's Quote">
                                         <rect key="frame" x="0.0" y="43" width="344" height="38"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <accessibility key="accessibilityConfiguration" label="A button showing a quote owner, tapping will show the quote associate with the owner"/>
+                                        <accessibility key="accessibilityConfiguration" hint="A button showing a quote owner, tapping will show the quote associate with the owner" label="Display quote button"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="SId-S4-3Rn"/>
                                         </constraints>
@@ -140,7 +141,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9m7-Uh-1q1" userLabel="C's Quote">
                                         <rect key="frame" x="0.0" y="86" width="344" height="38"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <accessibility key="accessibilityConfiguration" label="A button showing a quote owner, tapping will show the quote associate with the owner"/>
+                                        <accessibility key="accessibilityConfiguration" hint="A button showing a quote owner, tapping will show the quote associate with the owner" label="Display quote"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="gyD-h2-bLO"/>
                                         </constraints>
@@ -161,7 +162,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLs-2m-3dS" userLabel="D's Quote">
                                         <rect key="frame" x="0.0" y="129" width="344" height="38"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <accessibility key="accessibilityConfiguration" label="A button showing a quote owner, tapping will show the quote associate with the owner"/>
+                                        <accessibility key="accessibilityConfiguration" hint="A button showing a quote owner, tapping will show the quote associate with the owner" label="Display quote"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="kZk-Z2-iUQ"/>
                                         </constraints>
@@ -182,7 +183,7 @@
                                     <button toolTip="Show more quotes" opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfk-zC-NaB">
                                         <rect key="frame" x="0.0" y="172" width="344" height="34"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <accessibility key="accessibilityConfiguration" label="A back button to go to the screen showing quote owner's name and the quote"/>
+                                        <accessibility key="accessibilityConfiguration" hint="A back button to go to the screen showing quote owner's name and the quote" label="Back button"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="CcO-Ne-OCQ"/>
                                         </constraints>
@@ -205,7 +206,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XhK-3j-GVg"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.034513104217823054" green="0.034513104217823054" blue="0.034513104217823054" alpha="0.90627586920529801" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" name="AccentColor"/>
                         <constraints>
                             <constraint firstItem="C70-z0-9S2" firstAttribute="leading" secondItem="XhK-3j-GVg" secondAttribute="leading" constant="35" id="LKF-Ef-TOS"/>
@@ -223,7 +224,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uFP-ka-K5g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="669.60000000000002" y="2.2167487684729066"/>
+            <point key="canvasLocation" x="720" y="1"/>
         </scene>
     </scenes>
     <resources>

@@ -40,7 +40,7 @@ class QuoteViewController: UIViewController {
     // This method sets the UI
     // Firstly, this method is called by this view to set the UI elements (at which currentQuoteText, currentQuoteOwner are blank), therefore random quote is shown
     // This method can be then called QuoteListView (as there is a segue to this view), therefore QuoteListView sets the values (currentQuoteText, currentQuoteOwner)
-    func setUI(currentQuoteOwner: String, currentQuoteText: String) {
+    func setUI(currentQuoteOwner: String, currentQuoteText: String) -> Void {
         let quote: Quote = quoteBrain.getARandomQuote() // Random quote is fetched using the quoteBrain
         if(self.currentQuoteOwner == "" || self.currentQuoteText == "") { // If, (currently) property is blank, then getting values randomly
             self.currentQuoteOwner = quote.quoteOwner // Getting the value from a random quote

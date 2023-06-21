@@ -22,6 +22,9 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Quote" translatesAutoresizingMaskIntoConstraints="NO" id="CMo-uG-p92" userLabel="TopQuote">
                                         <rect key="frame" x="10" y="289" width="150" height="60"/>
                                         <color key="tintColor" name="AccentColor"/>
+                                        <accessibility key="accessibilityConfiguration" hint="An image showing quotation mark " label="Quotation image">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="150" id="EHk-CR-eMM"/>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="dUk-ze-mPA"/>
@@ -29,6 +32,7 @@
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inspire Now" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3n-Zy-cRc">
                                         <rect key="frame" x="62" y="389" width="290" height="66"/>
+                                        <accessibility key="accessibilityConfiguration" hint="A typogrpahy showing inspire now" label="Inspire now text"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="55"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -36,6 +40,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RotatedQuote" translatesAutoresizingMaskIntoConstraints="NO" id="7vr-k7-8if" userLabel="BottomQuote">
                                         <rect key="frame" x="324" y="495" width="80" height="30"/>
                                         <color key="tintColor" name="AccentColor"/>
+                                        <accessibility key="accessibilityConfiguration" hint="An image showing inverted quotation mark" label="Quotation image"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="80" id="2YN-aW-qUv"/>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="XAB-t2-Ew2"/>

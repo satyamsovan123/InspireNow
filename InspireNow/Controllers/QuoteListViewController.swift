@@ -56,11 +56,22 @@ class QuoteListViewController: UIViewController {
     }
     
     // This method (currently static) sets the four buttons's title lable to quote owner's name
-    func setUI() {
+    func setUI() -> Void {
         let quoteOwners: [String] = quoteBrain.getAllQuoteOwners()
+        
+        // Looping through the array of owner's name and then generating button for each owner
+        for quoteOwner: String in quoteOwners {
+            // Generate a button dynamically in the UI
+            createButton(title: quoteOwner)
+        }
         asQuote.setTitle(quoteOwners[0], for: .normal)
         bsQuote.setTitle(quoteOwners[1], for: .normal)
         csQuote.setTitle(quoteOwners[2], for: .normal)
         dsQuote.setTitle(quoteOwners[3], for: .normal)
+    }
+    
+    // This method creates a button with a given title
+    func createButton(title: String) -> Void {
+        print(title)
     }
 }
