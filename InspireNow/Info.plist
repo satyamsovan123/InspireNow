@@ -21,8 +21,6 @@
 			</array>
 		</dict>
 	</dict>
-
-	<!-- Add the alternate app icon information starts -->
 	<key>CFBundleIcons</key>
 	<dict>
 		<key>CFBundleAlternateIcons</key>
@@ -47,6 +45,5 @@
 			<false/>
 		</dict>
 	</dict>
-	<!-- Add the alternate app icon information ends -->
 </dict>
 </plist>

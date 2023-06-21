@@ -9,7 +9,7 @@ import UIKit
 
 // The QuoteView shows quote owner's name, quote and a show more button in the bottom
 class QuoteViewController: UIViewController {
-
+    
     // Reference to UI elements
     @IBOutlet weak var showMoreButton: UIButton!
     @IBOutlet weak var quoteText: UITextView!
@@ -24,10 +24,8 @@ class QuoteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI(currentQuoteOwner: currentQuoteOwner, currentQuoteText: currentQuoteText)
-        // changeAppIcon(to: "AlternateAppIcon")
-        // changeAppIcon(to: "AppIcon")
     }
-
+    
     // This method is called when show more button is pressed
     // It segues to QuoteListView, and since we don't need to pass any information, there is no need for overrding prepare method
     @IBAction func showMoreButtonPressed(_ sender: Any) {
@@ -47,33 +45,39 @@ class QuoteViewController: UIViewController {
         if(self.currentQuoteOwner == "" || self.currentQuoteText == "") { // If, (currently) property is blank, then getting values randomly
             self.currentQuoteOwner = quote.quoteOwner // Getting the value from a random quote
             self.currentQuoteText = quote.quoteText // Getting the value from a random quote
-        } else { // else, (currently) property is not blank, therefore, getting values from function parameter (i.e. segue initiator is calling this method)
+        } else { // Else, (currently) property is not blank, therefore, getting values from function parameter (i.e. segue initiator is calling this method)
             self.currentQuoteOwner = currentQuoteOwner // Getting the value from the function parameter (i.e. segue initiator)
             self.currentQuoteText = currentQuoteText // Getting the value from the function parameter (i.e. segue initiator)
         }
         
         quoteOwner.text = self.currentQuoteOwner // Setting the owner
         quoteText.text = self.currentQuoteText // Setting the text
-    
+        
     }
     
-    // Thanks ChatGPT
     // This function changes the app icon to an alternate app icon
+    // The assets are added and the info.plist is also changed accordingly
     // Alternate app icon here is a pride edition icon 🌈
-    func changeAppIcon(to iconName: String) {
+    func changeAppIcon(to name: String?) -> Void {
         if UIApplication.shared.supportsAlternateIcons {
-            UIApplication.shared.setAlternateIconName(iconName) { error in
+            UIApplication.shared.setAlternateIconName(name) { error in
                 if let error = error {
                     print("Failed to change app icon: \(error.localizedDescription)")
                 } else {
-                    print("App icon changed successfully to \(iconName)")
+                    // print("App icon changed successfully")
                 }
             }
-        } else {
-            print("Alternate app icons are not supported on this device.")
         }
     }
-
     
+    // This method is triggered once the user presses the change app icon button
+    // It alternates between default icon and pride icon
+    @IBAction func changeAppIconPressed(_ sender: UIButton) {
+        let currentAppIcon: String = UIApplication.shared.alternateIconName ?? ""
+        var appIconName: String? = nil // Setting value to nil, for forcing iOS to use default icon
+        if(currentAppIcon != "AlternateAppIcon") { // Setting value to the AlternateAppIcon
+            appIconName = "AlternateAppIcon"
+        }
+        changeAppIcon(to: appIconName)
+    }
 }
-

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <accessibilityOverrides/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
@@ -14,21 +14,21 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="QuoteViewController" customModule="InspireNow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="yDn-Bq-mS8" userLabel="Main View">
-                                <rect key="frame" x="35" y="35" width="344" height="816"/>
+                                <rect key="frame" x="35" y="35" width="250" height="478"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A's quote" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6H-ps-wvW">
-                                        <rect key="frame" x="0.0" y="0.0" width="344" height="24"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="24"/>
                                         <accessibility key="accessibilityConfiguration" hint="Quote owner's name" label="Owner text"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" editable="NO" textAlignment="center" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N3Y-PD-yTl">
-                                        <rect key="frame" x="0.0" y="54" width="344" height="692"/>
+                                        <rect key="frame" x="0.0" y="54" width="250" height="284"/>
                                         <accessibility key="accessibilityConfiguration" hint="Actual quote by the owner" label="Quote text">
                                             <accessibilityTraits key="traits" staticText="YES"/>
                                         </accessibility>
@@ -38,7 +38,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button toolTip="Show more quotes" opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXJ-ow-zvC">
-                                        <rect key="frame" x="0.0" y="776" width="344" height="40"/>
+                                        <rect key="frame" x="0.0" y="368" width="250" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <accessibility key="accessibilityConfiguration" hint="A button for showing more quote owner's name" label="Show more button"/>
                                         <constraints>
@@ -57,6 +57,26 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="showMoreButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9yE-d3-h2n"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" toolTip="Tap to change app icon" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="by7-ti-ZZA">
+                                        <rect key="frame" x="0.0" y="438" width="250" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="gqQ-ZV-jou"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Change app icon" titleAlignment="center">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changeAppIconPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M0E-eH-J6O"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -89,11 +109,11 @@
             <objects>
                 <viewController id="j1O-yj-GeJ" userLabel="Quote List View Controller" customClass="QuoteListViewController" customModule="InspireNow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o8L-vF-AdG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="C70-z0-9S2" userLabel="Main View">
-                                <rect key="frame" x="35" y="386.5" width="344" height="113.5"/>
+                                <rect key="frame" x="35" y="386.5" width="250" height="113.5"/>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XhK-3j-GVg"/>

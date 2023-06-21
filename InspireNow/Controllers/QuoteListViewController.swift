@@ -84,7 +84,7 @@ class QuoteListViewController: UIViewController {
     // This method is called when any of the buttons having a quote owner name is tapped
     // The quote owner name is captured and the associated quote is then used further
     // It performs a segue back to the QuoteView by setting some properties
-    @objc private func quoteOwnerButtonPressed(sender: UIButton) {
+    @objc func quoteOwnerButtonPressed(sender: UIButton) {
         let buttonLabel: String = sender.currentTitle ?? ""
         let quoteOwner: String = quoteBrain.removeConstantFromText(buttonLabel)
         selectedOwnerQuote = quoteBrain.getQuoteFromQuoteList(quoteOwner)
@@ -93,7 +93,7 @@ class QuoteListViewController: UIViewController {
     
     // This method is called when back button is pressed
     // It dismisses this view
-    @objc private func backButtonPressed(sender: UIButton) {
+    @objc func backButtonPressed(sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
 }

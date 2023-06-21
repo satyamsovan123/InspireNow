@@ -9,8 +9,6 @@ import Foundation
 
 // Quote brain handles the logic related quotes
 struct QuoteBrain {
-    var currentQuoteIndex: Int = 0
-    
     // Default quote
     let defaultQuote: Quote = Quote(quoteOwner: "", quoteText: "")
     
