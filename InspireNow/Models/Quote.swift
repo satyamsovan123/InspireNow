@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Quote model with properties and a initializer
 struct Quote {
     let quoteOwner: String
     let quoteText: String

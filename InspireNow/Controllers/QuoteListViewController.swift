@@ -7,37 +7,34 @@
 
 import UIKit
 
+// The QuoteListView has list of quote owner's name and a back button at the bottom
 class QuoteListViewController: UIViewController {
 
+    // Reference to UI elements
     @IBOutlet weak var asQuote: UIButton!
     @IBOutlet weak var bsQuote: UIButton!
     @IBOutlet weak var csQuote: UIButton!
     @IBOutlet weak var dsQuote: UIButton!
     
+    // Initializing models
     var quoteBrain: QuoteBrain = QuoteBrain()
-    var quoteOwners: [String] = []
     var selectedOwnerQuote: Quote?
-    
+        
+    // On load, calling the setUI() method to set the UI
     override func viewDidLoad() {
         super.viewDidLoad()
-        quoteOwners = quoteBrain.getAllQuoteOwners()
         setUI()
-        // print(quoteOwners)
-        // Do any additional setup after loading the view.
     }
     
+    // This method is called when back button is pressed
+    // It dismisses this view
     @IBAction func backButtonPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     
-
-    func setUI() {
-        asQuote.setTitle(quoteOwners[0], for: .normal)
-        bsQuote.setTitle(quoteOwners[1], for: .normal)
-        csQuote.setTitle(quoteOwners[2], for: .normal)
-        dsQuote.setTitle(quoteOwners[3], for: .normal)
-    }
-    
+    // This method is called when any of the buttons having a quote owner name is tapped
+    // The quote owner name is captured and the associated quote is then used further
+    // It performs a segue back to the QuoteView by setting some properties
     @IBAction func quoteOwnerButtonPressed(_ sender: UIButton) {
         let buttonLabel: String = sender.currentTitle ?? ""
         let quoteOwner: String = quoteBrain.removeConstantFromText(buttonLabel)
@@ -45,25 +42,25 @@ class QuoteListViewController: UIViewController {
         performSegue(withIdentifier: "showQuote", sender: self)
     }
     
+    // This method identifies the segue and sets the required property (currentQuoteOwner, currentQuoteText) in the QuoteView
+    // It helps to pass the quote details (associated with the tap) to the QuoteView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let defaultQuote: Quote = quoteBrain.defaultQuote
         if(segue.identifier == "showQuote") {
-            let destinationVC = segue.destination as! QuoteViewController
-            destinationVC.currentQuoteOwner = selectedOwnerQuote?.quoteOwner ?? defaultQuote.quoteOwner
-            destinationVC.currentQuoteText = selectedOwnerQuote?.quoteText ?? defaultQuote.quoteText
-            destinationVC.modalTransitionStyle = .crossDissolve
-            destinationVC.modalPresentationStyle = .fullScreen
+            let destinationVC = segue.destination as! QuoteViewController // Downcasting the view
+            destinationVC.currentQuoteOwner = selectedOwnerQuote?.quoteOwner ?? defaultQuote.quoteOwner // Setting the property in the view
+            destinationVC.currentQuoteText = selectedOwnerQuote?.quoteText ?? defaultQuote.quoteText // Setting the property in the view
+            destinationVC.modalTransitionStyle = .crossDissolve // Setting the segue transition
+            destinationVC.modalPresentationStyle = .fullScreen // Setting the presentation to fullscreen, as default can be dismissed by user
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // This method (currently static) sets the four buttons's title lable to quote owner's name
+    func setUI() {
+        let quoteOwners: [String] = quoteBrain.getAllQuoteOwners()
+        asQuote.setTitle(quoteOwners[0], for: .normal)
+        bsQuote.setTitle(quoteOwners[1], for: .normal)
+        csQuote.setTitle(quoteOwners[2], for: .normal)
+        dsQuote.setTitle(quoteOwners[3], for: .normal)
     }
-    */
-
 }
