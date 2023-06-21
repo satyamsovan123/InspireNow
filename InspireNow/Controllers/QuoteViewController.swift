@@ -24,6 +24,8 @@ class QuoteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI(currentQuoteOwner: currentQuoteOwner, currentQuoteText: currentQuoteText)
+        // changeAppIcon(to: "AlternateAppIcon")
+        // changeAppIcon(to: "AppIcon")
     }
 
     // This method is called when show more button is pressed
@@ -54,6 +56,24 @@ class QuoteViewController: UIViewController {
         quoteText.text = self.currentQuoteText // Setting the text
     
     }
+    
+    // Thanks ChatGPT
+    // This function changes the app icon to an alternate app icon
+    // Alternate app icon here is a pride edition icon 🌈
+    func changeAppIcon(to iconName: String) {
+        if UIApplication.shared.supportsAlternateIcons {
+            UIApplication.shared.setAlternateIconName(iconName) { error in
+                if let error = error {
+                    print("Failed to change app icon: \(error.localizedDescription)")
+                } else {
+                    print("App icon changed successfully to \(iconName)")
+                }
+            }
+        } else {
+            print("Alternate app icons are not supported on this device.")
+        }
+    }
+
     
 }
 

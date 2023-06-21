@@ -19,7 +19,6 @@ class QuoteListViewController: UIViewController {
     var quoteBrain: QuoteBrain = QuoteBrain()
     var selectedOwnerQuote: Quote?
     
-
     // On load, calling the setUI() method to set the UI
     override func viewDidLoad() {
         super.viewDidLoad()
