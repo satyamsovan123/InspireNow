@@ -13,12 +13,16 @@ class QuoteViewController: UIViewController {
     @IBOutlet weak var quoteText: UITextView!
     @IBOutlet weak var quoteOwner: UILabel!
     
+    
+    
     let quoteBrain = QuoteBrain()
+    
+    var currentQuoteText: String = ""
+    var currentQuoteOwner: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
-        // Do any additional setup after loading the view.
+        setUI(currentQuoteOwner: currentQuoteOwner, currentQuoteText: currentQuoteText)
     }
 
     @IBAction func showMoreButtonPressed(_ sender: Any) {
@@ -26,16 +30,28 @@ class QuoteViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "showQuoteList") {
-            setUI()
-        }
+
         
     }
     
-    func setUI() {
+    func generateRandomQuote() -> Quote {
         let quote: Quote = quoteBrain.getARandomQuote()
-        quoteText.text = quote.quoteText
-        quoteOwner.text = quote.quoteOwner
+        return quote
+    }
+    
+    func setUI(currentQuoteOwner: String, currentQuoteText: String) {
+        var quote: Quote = quoteBrain.defaultQuote
+        if(self.currentQuoteOwner == "" || self.currentQuoteText == "") {
+            quote = generateRandomQuote()
+            self.currentQuoteOwner = quote.quoteOwner
+            self.currentQuoteText = quote.quoteText
+        } else {
+            self.currentQuoteOwner = currentQuoteOwner
+            self.currentQuoteText = currentQuoteText
+        }
+        
+        quoteText.text = self.currentQuoteText
+        quoteOwner.text = self.currentQuoteOwner
     }
     
 }
