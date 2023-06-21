@@ -7,13 +7,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class QuoteViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func showMoreButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "showQuoteList", sender: self)
+    }
+    
 }
 
