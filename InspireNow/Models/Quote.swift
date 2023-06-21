@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+struct Quote {
+    let quoteOwner: String
+    let quoteText: String
+    
+    init(quoteOwner: String, quoteText: String) {
+        self.quoteOwner = quoteOwner
+        self.quoteText = quoteText
+    }
+}

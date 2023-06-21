@@ -1,1 +1,1 @@
-### This app inspires yow showing random quote.
+### This app inspires you by showing random quote.
