@@ -7,7 +7,7 @@
 
 import UIKit
 
-// The QuoteView shows quote owner's name, quote and a show more button in the bottom
+// The QuoteView shows quote owner's name, the quote, show more button and a button to change icon of the app in the bottom
 class QuoteViewController: UIViewController {
     
     // Reference to UI elements

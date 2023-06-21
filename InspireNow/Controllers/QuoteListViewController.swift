@@ -11,7 +11,7 @@ import UIKit
 class QuoteListViewController: UIViewController {
 
     // Reference to UI elements
-    @IBOutlet weak var mainView: UIStackView! // This is where buttons should be placed at
+    @IBOutlet weak var mainView: UIStackView! // This is the stack view where buttons should be placed at
     
     let backSymbol = UIImage(systemName: "arrowshape.backward") // Back symbol for back button
     
