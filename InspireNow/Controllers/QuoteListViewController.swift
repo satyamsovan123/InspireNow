@@ -60,6 +60,11 @@ class QuoteListViewController: UIViewController {
         button.layer.cornerRadius = 5
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         
+        // Adding accessibilities
+        let quoteOwner: String = quoteBrain.removeConstantFromText(title)
+        button.accessibilityLabel = "Quote owner's name button"
+        button.accessibilityHint = "Tap this button to display a quote from \(quoteOwner)."
+        
         // Auto layout
         let buttonHeightConstraint: NSLayoutConstraint = button.heightAnchor.constraint(lessThanOrEqualToConstant: 40)
 
